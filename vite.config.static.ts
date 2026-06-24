@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // Static SPA build for GitHub Pages — bypasses TanStack Start SSR.
 export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
-  base: "/", // Change to "/<repo-name>/" if not using a custom domain
+  base: "/kigo-pay-ed-web/",
   build: {
     outDir: "dist",
     emptyOutDir: true,
