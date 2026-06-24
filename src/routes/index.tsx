@@ -11,13 +11,6 @@ import { KigoLogo, KigoLogoWhite } from "@/components/logos/KigoLogo";
 import { LottieClient } from "@/components/LottieClient";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Kigo — Escanea tu boleto" },
-      { name: "description", content: "Escanea tu boleto de estacionamiento para continuar." },
-      { name: "theme-color", content: "#0A0A0A" },
-    ],
-  }),
   component: KigoApp,
 });
 
