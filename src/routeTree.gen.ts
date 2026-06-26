@@ -20,9 +20,10 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
 }
+
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-}
+} 
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute

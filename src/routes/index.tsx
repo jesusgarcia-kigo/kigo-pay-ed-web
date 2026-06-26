@@ -9,6 +9,7 @@ import { PayPalLogo } from "@/components/logos/PayPalLogo";
 import { ApplePayLogo } from "@/components/logos/ApplePayLogo";
 import { KigoLogo, KigoLogoWhite } from "@/components/logos/KigoLogo";
 import { LottieClient } from "@/components/LottieClient";
+import bannerPublicity from "@/assets/banner-publicity.png";
 
 export const Route = createFileRoute("/")({
   component: KigoApp,
@@ -759,7 +760,7 @@ function Checkout({
               className="btn-pay mt-2 flex h-[52px] w-full items-center justify-center rounded-xl px-5 text-[15px] font-semibold disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               {isPayLoading ? (
-                <LottieClient src="/src/assets/loading-animation.json" loop className="h-8 w-8" />
+                <LottieClient src={`${import.meta.env.BASE_URL}assets/loading-animation.json`} loop className="h-8 w-8" />
               ) : (
                 "Pagar $75.50 MXN"
               )}
@@ -946,7 +947,7 @@ function ConfirmingAnimation() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-8">
       <LottieClient
-        src="/src/assets/success-animation.json"
+        src={`${import.meta.env.BASE_URL}assets/success-animation.json`}
         loop={false}
         className="h-40 w-40"
       />
@@ -1141,7 +1142,7 @@ function Success({ method, onDone }: { method: Method; onDone: () => void }) {
           className="block overflow-hidden rounded-2xl"
         >
           <img
-            src="/src/assets/banner-publicity.png"
+            src={bannerPublicity}
             alt="Descarga la app de Kigo"
             className="w-full rounded-2xl"
             draggable={false}
