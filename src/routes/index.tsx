@@ -262,7 +262,7 @@ function Scanner({ onManual, onDetect, forceManualOpen, onManualClose }: { onMan
       {/* Gradient top overlay — elegant separation for the header block */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[180px] bg-gradient-to-b from-black/65 via-black/25 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[200px] bg-gradient-to-b from-black/70 via-black/30 to-transparent"
       />
 
       {/* Subtle blur + dim OUTSIDE the scan frame — clip-path cuts out center */}
@@ -283,17 +283,17 @@ function Scanner({ onManual, onDetect, forceManualOpen, onManualClose }: { onMan
       />
 
       {/* Header — generous top padding, clear hierarchy */}
-      <header className="relative z-20 flex flex-col items-center px-6 pt-[max(calc(env(safe-area-inset-top)+12px),32px)]">
-        <KigoWordmark className="h-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" variant="white" />
+      <header className="relative z-20 flex flex-col items-center px-6 pt-[max(calc(env(safe-area-inset-top)+16px),36px)]">
+        <KigoWordmark className="h-8 opacity-90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" variant="white" />
         <h1
-          className="mt-4 text-[24px] font-bold leading-tight tracking-[-0.02em] text-white"
+          className="mt-5 text-[22px] font-bold leading-tight tracking-[-0.02em] text-white"
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
         >
           Escanea tu boleto
         </h1>
         <p
-          className="mt-1.5 text-[14px] font-medium leading-snug text-white/85"
-          style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}
+          className="mt-2 rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium leading-snug text-white/90 backdrop-blur-sm"
+          style={{ textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}
         >
           Centra el código dentro del marco
         </p>
@@ -313,12 +313,12 @@ function Scanner({ onManual, onDetect, forceManualOpen, onManualClose }: { onMan
 
       {/* Feedback toast — only gray orientation hints (no red warnings) */}
       {!showPaidAlert && !showCantReadAlert && (
-        <div className="pointer-events-none absolute left-1/2 z-30 -translate-x-1/2" style={{ top: "calc(50% + 160px)" }}>
+        <div className="pointer-events-none absolute left-1/2 z-30 -translate-x-1/2" style={{ top: "calc(50% + 165px)" }}>
           <div
             key={feedbackIndex}
-            className="rounded-full bg-black/50 px-4 py-2 text-center backdrop-blur-md"
+            className="rounded-full bg-white/10 px-5 py-2.5 text-center backdrop-blur-md ring-1 ring-white/10"
           >
-            <p className="whitespace-nowrap text-[13px] font-medium text-white/90">
+            <p className="whitespace-nowrap text-[13px] font-medium tracking-wide text-white/90">
               {feedback.type === "hint" ? feedback.text : feedback.text}
             </p>
           </div>
